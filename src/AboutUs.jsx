@@ -1,17 +1,21 @@
 export default function AboutUs() {
   return (
-    <article className="about-card">
-      <h2>About Paradise Nursery</h2>
-      <p>
-        We curate resilient, climate-ready houseplants sourced from ethical growers.
-        Every shipment is inspected for vigor before it leaves our greenhouse so you
-        can bring home a thriving companion with confidence.
-      </p>
-      <p>
-        Whether you are just planting roots or designing a room-sized jungle, our
-        plant stylists help you choose specimens that match your light, mood, and
-        lifestyle.
-      </p>
-    </article>
+    <div className="about-us-container">
+      <article className="about-card">
+        <h2>About Paradise Nursery</h2>
+        <p>
+          Paradise Nursery is a boutique plant atelier crafting ready-to-love
+          houseplants for modern homes. We source from ethical growers, nurse each
+          specimen through an expert health check, and ship with clear care
+          instructions so you can invite greenery without the guesswork.
+        </p>
+        <p>
+          Our mission is to empower every apartment, studio, and expansive loft to
+          feel calmer and more alive—one thoughtful plant at a time. We help you
+          match light, texture, and scale so the result is a lush, sustainable
+          ecosystem that grows with you.
+        </p>
+      </article>
+    </div>
   )
 }

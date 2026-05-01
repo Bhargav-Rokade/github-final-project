@@ -41,3 +41,7 @@ export default function CartItem({ item }) {
     </article>
   )
 }
+
+export function calculateCartTotal(items = []) {
+  return items.reduce((sum, cartItem) => sum + cartItem.price * cartItem.quantity, 0)
+}

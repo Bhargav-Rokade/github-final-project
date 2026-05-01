@@ -1,18 +1,17 @@
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Header from '../components/Header.jsx'
-import CartItem from '../components/CartItem.jsx'
+import CartItem, { calculateCartTotal } from '../components/CartItem.jsx'
 import {
   selectCartCount,
   selectCartItems,
-  selectCartTotal,
 } from '../features/cart/CartSlice.jsx'
 import '../App.css'
 
 export default function CartPage() {
   const items = useSelector(selectCartItems)
   const totalPlants = useSelector(selectCartCount)
-  const totalCost = useSelector(selectCartTotal)
+  const totalCost = calculateCartTotal(items)
 
   return (
     <div className="App">

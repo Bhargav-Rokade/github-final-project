@@ -72,6 +72,12 @@
   box-shadow: 0 25px 45px rgba(14, 18, 9, 0.15);
 }
 
+.about-us-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0 0;
+}
+
 .category-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
