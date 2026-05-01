@@ -1,4 +1,4 @@
-# Paradise Nursery Frontend
+# e-plantShopping Frontend
 
 This Vite-powered React project implements the frontend for the Paradise Nursery shopping experience.
 It includes:
