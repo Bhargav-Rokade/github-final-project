@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Header from '../components/Header.jsx'
-import CartItem, { calculateCartTotal } from '../components/CartItem.jsx'
+import CartItem, {
+  calculateCartTotal,
+  CartTotalDisplay,
+} from '../components/CartItem.jsx'
 import {
   selectCartCount,
   selectCartItems,
@@ -24,8 +27,8 @@ export default function CartPage() {
           </div>
           <div className="summary-meta">
             <span>{totalPlants} plant{totalPlants === 1 ? '' : 's'}</span>
-            <span>${totalCost.toFixed(2)} total</span>
           </div>
+          <CartTotalDisplay total={totalCost} />
           <div className="cart-actions">
             <Link to="/plants" className="ghost-btn continue-link">
               Continue Shopping

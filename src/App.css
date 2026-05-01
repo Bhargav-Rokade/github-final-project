@@ -186,6 +186,18 @@
   gap: 12px;
 }
 
+.cart-total-amount {
+  padding: 18px 26px;
+  border-radius: 20px;
+  background: #1e451f;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 .ghost-btn,
 .primary-btn {
   padding: 12px 26px;

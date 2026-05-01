@@ -1,12 +1,16 @@
 import { useDispatch } from 'react-redux'
 import {
-  decreaseQuantity,
-  increaseQuantity,
   removeItem,
+  updateQuantity,
 } from '../features/cart/CartSlice.jsx'
 
 export default function CartItem({ item }) {
   const dispatch = useDispatch()
+
+  const handleQuantityChange = (nextQuantity) => {
+    if (nextQuantity < 1) return
+    dispatch(updateQuantity({ id: item.id, quantity: nextQuantity }))
+  }
 
   return (
     <article className="cart-item">
@@ -17,7 +21,7 @@ export default function CartItem({ item }) {
         <div className="cart-item-controls">
           <button
             className="ghost-btn"
-            onClick={() => dispatch(decreaseQuantity(item.id))}
+            onClick={() => handleQuantityChange(item.quantity - 1)}
             disabled={item.quantity === 1}
           >
             −
@@ -25,7 +29,7 @@ export default function CartItem({ item }) {
           <span>{item.quantity}</span>
           <button
             className="ghost-btn"
-            onClick={() => dispatch(increaseQuantity(item.id))}
+            onClick={() => handleQuantityChange(item.quantity + 1)}
           >
             +
           </button>
@@ -44,4 +48,13 @@ export default function CartItem({ item }) {
 
 export function calculateCartTotal(items = []) {
   return items.reduce((sum, cartItem) => sum + cartItem.price * cartItem.quantity, 0)
+}
+
+export function CartTotalDisplay({ total }) {
+  return (
+    <div className="cart-total-amount">
+      <span>Total cart amount</span>
+      <strong>${total.toFixed(2)}</strong>
+    </div>
+  )
 }
