@@ -32,11 +32,23 @@ const CartSlice = createSlice({
     removeItem: (state, action) => {
       state.items = state.items.filter((item) => item.id !== action.payload)
     },
+    updateQuantity: (state, action) => {
+      const { id, quantity } = action.payload
+      const item = state.items.find((entry) => entry.id === id)
+      if (item && quantity > 0) {
+        item.quantity = quantity
+      }
+    },
   },
 })
 
-export const { addItem, increaseQuantity, decreaseQuantity, removeItem } =
-  CartSlice.actions
+export const {
+  addItem,
+  increaseQuantity,
+  decreaseQuantity,
+  removeItem,
+  updateQuantity,
+} = CartSlice.actions
 
 export const selectCartItems = (state) => state.cart.items
 
