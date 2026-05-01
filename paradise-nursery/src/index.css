@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&family=Playfair+Display:wght@600&display=swap');
+
+:root {
+  --bg-cream: #f8f5ef;
+  --bg-olive: #28331a;
+  --accent: #d4b483;
+  --accent-dark: #b0742f;
+  --text: #1a1a1a;
+  --text-muted: #4d4b45;
+  --card-bg: #fff;
+  --border-soft: rgba(255, 255, 255, 0.4);
+  --shadow-soft: 0 18px 35px rgba(28, 33, 20, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  background: var(--bg-cream);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  color: var(--text);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  color: var(--text-muted);
+}
